@@ -8,6 +8,7 @@ const RandomQuoteMachine = () => {
   const fetchQuote = async () => {
     const response = await fetch('https://api.quotable.io/random');
     const data = await response.json();
+    console.log(data);
     setQuote(data.content);
     setAuthor(data.author);
   };
@@ -32,8 +33,7 @@ const RandomQuoteMachine = () => {
           href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`"${quote}" - ${author}`)}`}
           target="_blank"
           rel="noopener noreferrer"
-        >
-          Tweet
+        >Tweet
         </a>
       </div>
     </div>
